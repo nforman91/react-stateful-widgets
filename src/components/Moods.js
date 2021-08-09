@@ -42,21 +42,21 @@ export default function Moods(props) {
 
   const makeHappy = () => {
     /* STEP 4 */
-    setMood={happyMood};
+    onClick = setMood('Quite happy!');
   };
   const makeSad = () => {
     /* STEP 5 */
-    setMood={sadMood};
+    onClick = setMood('Rather sad');
   };
   const reset = () => {
     /* STEP 6 */
-    setMood={initialMood};
+    onClick = setMood('Not sure how I feel');
   };
 
   const style = {
     fontSize: '1.5em',
     marginBottom: '0.3em',
-    color: setMood={happyMood} ? 'royalblue' : 'crimson', /* STEP 2 */
+    color: mood === happyMood ? 'royalblue' : 'crimson', /* STEP 2 */
   };
 
   return (
