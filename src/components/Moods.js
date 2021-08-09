@@ -42,7 +42,7 @@ export default function Moods(props) {
 
   const makeHappy = () => {
     /* STEP 4 */
-    onClick = setMood('Quite happy!');
+    onClick = setMood('Quite happy!', happyMood);
   };
   const makeSad = () => {
     /* STEP 5 */
