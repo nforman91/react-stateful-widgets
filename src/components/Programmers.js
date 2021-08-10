@@ -30,14 +30,13 @@ export default function Programmers() {
   const [id, setId] = useState(null);
   // We'll have to use the state hook twice, as we need two slices of state.
   // The programmers list on the one hand, and the id of the featured programmer on the other.
-
+  
   const getNameOfFeatured = () => {
 
-    // (list.id === id) ? list.name : 'it did not work';
     list.forEach(item => {
-      item.id === id ? item.name : 'it did not work';
+      id === item.id ? item.name : 'it did not work';
     })
-
+    
     // Leave this for last!
     // This is NOT an event handler but a helper function. See its usage inside the JSX.
     // It's going to utilize both slices of state to return the _name_ of the featured dev.
@@ -48,9 +47,9 @@ export default function Programmers() {
   const style = {
     fontSize: '1.5em',
     marginTop: '0.5em',
-    color: list === useState(list) ? 'gold' : 'royalblue', // 🤔 color turns to gold, when celebrating
+    color: id ? 'gold' : 'royalblue', // 🤔 color turns to gold, when celebrating
   };
-
+  
   return (
     <div className='widget-programmers container'>
       <h2>Programmers</h2>
@@ -71,7 +70,7 @@ export default function Programmers() {
           // Ternaries are fantastic to render "one thing or the other" depending on the "truthiness" of something.
           // Pseudo-code: if the currently featured id is truthy render text 1, otherwise render text 2.
           // Replace the hard-coded false with the correct variable.
-          false
+          id
             ? `🎉 Let's celebrate ${getNameOfFeatured()}! 🥳`
             : 'Pick an awesome programmer'
         }
