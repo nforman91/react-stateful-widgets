@@ -32,7 +32,7 @@ export default function Programmers() {
   // The programmers list on the one hand, and the id of the featured programmer on the other.
   
   const getNameOfFeatured = () => {
-
+    
     list.forEach(item => {
       id === item.id ? item.name : 'it did not work';
     })
